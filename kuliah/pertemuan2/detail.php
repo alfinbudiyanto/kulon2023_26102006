@@ -1,18 +1,11 @@
 <?php
-
 require 'functions.php';
-
-// jika tidak ada id di url
-if (!isset($_GET['id'])) {
-  header("Location: index.php");
-  exit;
-}
 
 // ambil id dari URL
 $id = $_GET['id'];
-// query mahasiswa berdasarkan id
-$m = query("SELECT * FROM mahasiswa WHERE id=$id");
 
+// query mahasiswa berdasarkan id
+$m = query("SELECT * FROM mahasiswa WHERE id = $id");
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +13,6 @@ $m = query("SELECT * FROM mahasiswa WHERE id=$id");
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detail Mahasiswa</title>
 </head>
