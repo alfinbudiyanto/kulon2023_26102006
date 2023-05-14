@@ -1,5 +1,4 @@
 <?php
-
 require 'functions.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
@@ -9,13 +8,11 @@ if (isset($_POST['cari'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daftar Mahasiswa</title>
 </head>
@@ -24,10 +21,10 @@ if (isset($_POST['cari'])) {
   <h3>Daftar Mahasiswa</h3>
 
   <a href="tambah.php">Tambah Data Mahasiswa</a>
-  <br></br>
+  <br><br>
 
   <form action="" method="POST">
-    <input type="text" name="keyword" size="40" placeholder="masukkan keyword pencarian..." autocomplete="off" autofocus>
+    <input type="text" name="keyword" size="40" placeholder="masukkan keyword pencarian.." autocomplete="off" autofocus>
     <button type="submit" name="cari">Cari!</button>
   </form>
   <br>
@@ -39,6 +36,14 @@ if (isset($_POST['cari'])) {
       <th>Nama</th>
       <th>Aksi</th>
     </tr>
+
+    <?php if (empty($mahasiswa)) : ?>
+      <tr>
+        <td colspan="4">
+          <p style="color: red; font-style: italic;">data mahasiswa tidak ditemukan!</p>
+        </td>
+      </tr>
+    <?php endif; ?>
 
     <?php $i = 1;
     foreach ($mahasiswa as $m) : ?>
@@ -52,6 +57,7 @@ if (isset($_POST['cari'])) {
       </tr>
     <?php endforeach; ?>
   </table>
+
 </body>
 
 </html>

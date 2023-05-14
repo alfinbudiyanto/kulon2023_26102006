@@ -1,14 +1,14 @@
 <?php
-
 require 'functions.php';
 
-// cek apakan tombol tambah sudah ditekan
+// cek apakah tombol tambah sudah ditekan
 if (isset($_POST['tambah'])) {
   if (tambah($_POST) > 0) {
     echo
-    "<script>
-      alert('data berhasil ditambahkan')
-      document.location.href = 'index.php'
+    "
+      <script>
+        alert('data berhasil ditambahkan');
+        document.location.href = 'index.php';
       </script>
     ";
   } else {
@@ -17,13 +17,11 @@ if (isset($_POST['tambah'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Data Mahasiswa</title>
 </head>
@@ -52,8 +50,8 @@ if (isset($_POST['tambah'])) {
       </li>
       <li>
         <label>
-          Jurusan
-          <input type="text" name="jurusan" requierd>
+          Jurusan :
+          <input type="text" name="jurusan" required>
         </label>
       </li>
       <li>
@@ -63,7 +61,7 @@ if (isset($_POST['tambah'])) {
         </label>
       </li>
       <li>
-        <button type="submit" name="tambah">Tambah Data</button>
+        <button type="submit" name="tambah">Tambah Data!</button>
       </li>
     </ul>
   </form>

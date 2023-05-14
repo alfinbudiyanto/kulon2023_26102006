@@ -1,5 +1,4 @@
 <?php
-
 require 'functions.php';
 
 // jika tidak ada id di url
@@ -14,14 +13,14 @@ $id = $_GET['id'];
 // query mahasiswa berdasarkan id
 $m = query("SELECT * FROM mahasiswa WHERE id = $id");
 
-// cek apakan tombol ubah sudah ditekan
+// cek apakah tombol ubah sudah ditekan
 if (isset($_POST['ubah'])) {
   if (ubah($_POST) > 0) {
     echo
     "
       <script>
-        alert('data berhasil diubah')
-        document.location.href = 'index.php'
+        alert('data berhasil diubah');
+        document.location.href = 'index.php';
       </script>
     ";
   } else {
@@ -30,13 +29,11 @@ if (isset($_POST['ubah'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ubah Data Mahasiswa</title>
 </head>
@@ -66,8 +63,8 @@ if (isset($_POST['ubah'])) {
       </li>
       <li>
         <label>
-          Jurusan
-          <input type="text" name="jurusan" requierd value="<?= $m['jurusan']; ?>">
+          Jurusan :
+          <input type="text" name="jurusan" required value="<?= $m['jurusan']; ?>">
         </label>
       </li>
       <li>
@@ -77,7 +74,7 @@ if (isset($_POST['ubah'])) {
         </label>
       </li>
       <li>
-        <button type="submit" name="ubah">Ubah Data</button>
+        <button type="submit" name="ubah">Ubah Data!</button>
       </li>
     </ul>
   </form>
